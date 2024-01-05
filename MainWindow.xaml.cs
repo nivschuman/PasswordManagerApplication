@@ -63,7 +63,7 @@ namespace PMApplication
                 return;
             }
 
-            userPage = new UserPage();
+            userPage = new UserPage(username);
             Navigate(userPage);
         }
 

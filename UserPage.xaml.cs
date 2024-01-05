@@ -20,11 +20,13 @@ namespace PMApplication
     /// </summary>
     public partial class UserPage : Page
     {
-        public UserPage()
+        public UserPage(string username)
         {
             InitializeComponent();
 
-            PasswordsDataGrid.Items.Add(new PasswordItem("youtube", "123"));
+            HelloLabel.Content = $"Hello {username}!";
+
+            //PasswordsDataGrid.Items.Add(new PasswordItem("youtube", "123"));
         }
     }
 }
