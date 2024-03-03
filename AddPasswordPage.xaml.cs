@@ -27,6 +27,11 @@ namespace PMApplication
             InitializeComponent();
         }
 
+        public void GeneratePassword(object sender, EventArgs e)
+        {
+            PasswordTextBox.Text = Password.Generate(15, 5);
+        }
+
         public void Submit(object sender, EventArgs e)
         {
             if(SubmitEvent != null)
