@@ -20,13 +20,73 @@ namespace PMApplication
     /// </summary>
     public partial class UserPage : Page
     {
+        public event EventHandler RefreshEvent;
+        public event EventHandler AddPasswordEvent;
+        public event EventHandler ShowPasswordEvent;
+        public event EventHandler DeletePasswordEvent;
         public UserPage(string username)
         {
             InitializeComponent();
 
+            //hello label
             HelloLabel.Content = $"Hello {username}!";
+        }
 
-            //PasswordsDataGrid.Items.Add(new PasswordItem("youtube", "123"));
+        public void DisplaySources(List<string> sources)
+        {
+            PasswordsDataGrid.Items.Clear();
+            foreach(string source in sources)
+            {
+                PasswordsDataGrid.Items.Add(new PasswordItem(source, ""));
+            }
+        }
+
+        public void ShowPassword(object sender, EventArgs e)
+        {
+            Button showButton = (Button)sender;
+
+            PasswordItem passwordItem = (PasswordItem)showButton.DataContext;
+
+            if(ShowPasswordEvent != null)
+            {
+                PasswordItemEventArgs passwordItemEV = new PasswordItemEventArgs();
+                passwordItemEV.PasswordItem = passwordItem;
+
+                ShowPasswordEvent(sender, passwordItemEV);
+            }
+        }
+
+        public void DeletePassword(object sender, EventArgs e)
+        {
+            Button showButton = (Button)sender;
+
+            PasswordItem passwordItem = (PasswordItem)showButton.DataContext;
+
+            if (ShowPasswordEvent != null)
+            {
+                PasswordItemEventArgs passwordItemEV = new PasswordItemEventArgs();
+                passwordItemEV.PasswordItem = passwordItem;
+
+                DeletePasswordEvent(sender, passwordItemEV);
+            }
+        }
+
+        public void AddPassword(object sender, EventArgs e)
+        {
+            if(AddPasswordEvent != null)
+            {
+                //TBD special event args?
+                AddPasswordEvent(sender, e);
+            }
+        }
+
+        public void Refresh(object sender, EventArgs e)
+        {
+            if(RefreshEvent != null)
+            {
+                //TBD special event args?
+                RefreshEvent(sender, e);
+            }
         }
     }
 }
