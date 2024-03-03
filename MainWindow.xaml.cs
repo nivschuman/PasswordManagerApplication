@@ -119,8 +119,9 @@ namespace PMApplication
             passwordItem.Password = await GetPassword(passwordItem.Source);
 
             //remove previous item and insert updated item to reflect change
+            int idx = userPage.PasswordsDataGrid.Items.IndexOf(passwordItem);
             userPage.PasswordsDataGrid.Items.Remove(passwordItem);
-            userPage.PasswordsDataGrid.Items.Add(passwordItem);
+            userPage.PasswordsDataGrid.Items.Insert(idx, passwordItem);
         }
 
         private async void SubmitPassword(object sender, EventArgs e)
