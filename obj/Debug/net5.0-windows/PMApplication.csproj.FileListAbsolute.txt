@@ -22,7 +22,6 @@ C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\PMApplication
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\PMApplication.genruntimeconfig.cache
 C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\PasswordManagerClientDLL.dll
 C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\PasswordManagerClientDLL.pdb
-C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\PMApplication.csproj.CopyComplete
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\UserPage.g.cs
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\UserPage.baml
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\PMApplication.csproj.AssemblyReference.cache
@@ -30,3 +29,4 @@ C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\PMApplication
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\refint\PMApplication.dll
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\AddPasswordPage.g.cs
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\AddPasswordPage.baml
+C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\PMApplic.30D81739.Up2Date

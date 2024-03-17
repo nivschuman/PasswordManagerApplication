@@ -34,6 +34,7 @@ namespace PMApplication
             privateKeyChooseFileButton.Click += ChooseFileButtonClick;
 
             loginButton.Click += Login;
+            newUserButton.Click += CreateUser;
         }
 
         private void Login(object sender, EventArgs e)
@@ -58,7 +59,7 @@ namespace PMApplication
                 userEventArgs.PrivateKeyFileName = privateKeyFileName;
                 userEventArgs.UserName = usernameTextBox.Text;
 
-                CreateUser(sender, userEventArgs);
+                CreateUserEvent(sender, userEventArgs);
             }
         }
 

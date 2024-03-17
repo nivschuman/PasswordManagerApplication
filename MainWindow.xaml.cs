@@ -171,6 +171,11 @@ namespace PMApplication
             pmClient.CreateNewRSAKeys(publicKeyFileName, privateKeyFileName);
 
             CommunicationProtocol answer = await Task.Run(() => pmClient.CreateUser(username));
+
+            ue.PublicKeyFileName = publicKeyFileName;
+            ue.PrivateKeyFileName = privateKeyFileName;
+
+            Login(sender, ue);
         }
 
         private async Task<string> DeletePassword(string source)
