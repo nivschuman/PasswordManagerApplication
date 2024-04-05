@@ -19,7 +19,7 @@
         <!--Row 0: User details-->
         <StackPanel Grid.Row="0" Orientation="Horizontal" HorizontalAlignment="Stretch">
             <Label Name="HelloLabel" FontSize="40" HorizontalAlignment="Left" VerticalAlignment="Center" Foreground="White">Hello User!</Label>
-            <Button FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="400,10,0,0" Background="Red" Foreground="White">Delete Account</Button>
+            <Button Click="DeleteAccount" FontSize="25" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="400,10,0,0" Background="Red" Foreground="White">Delete Account</Button>
         </StackPanel>
         
         <!--Row 1: Passwords-->

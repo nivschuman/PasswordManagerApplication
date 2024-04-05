@@ -24,6 +24,7 @@ namespace PMApplication
         public event EventHandler AddPasswordEvent;
         public event EventHandler ShowPasswordEvent;
         public event EventHandler DeletePasswordEvent;
+        public event EventHandler DeleteAccountEvent;
         public UserPage(string username)
         {
             InitializeComponent();
@@ -86,6 +87,15 @@ namespace PMApplication
             {
                 //TBD special event args?
                 RefreshEvent(sender, e);
+            }
+        }
+
+        public void DeleteAccount(object sender, EventArgs e)
+        {
+            if(DeleteAccountEvent != null)
+            {
+                //TBD special event args?
+                DeleteAccountEvent(sender, e);
             }
         }
     }

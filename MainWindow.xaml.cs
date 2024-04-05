@@ -57,11 +57,36 @@ namespace PMApplication
 
             pmClient.ImportRSAKeys(publicKeyFileName, privateKeyFileName);
 
-            string answerStr = await LoginToUser();
+            string answerStr = "";
+
+            try
+            {
+                answerStr = await LoginToUser();
+            }
+            catch(PMClientException pme)
+            {
+                if(pme.Reason == PMErrorReason.ConnectionRefused)
+                {
+                    MessageBox.Show("Failed to connect to server, it may be offline", "Error");
+
+                    return;
+                }
+                else if(pme.Reason == PMErrorReason.ConnectionTimeouted)
+                {
+                    MessageBox.Show("Server took too long to respond, it may be offline", "Error");
+
+                    return;
+                }
+                else if(pme.Reason == PMErrorReason.Unknown)
+                {
+                    MessageBox.Show("Server connection failed for unkown reason", "Error");
+                }
+            }
+            
 
             if(answerStr != "Succeeded")
             {
-                MessageBox.Show(answerStr);
+                MessageBox.Show(answerStr, "Error");
                 return;
             }
 
@@ -70,6 +95,7 @@ namespace PMApplication
             userPage.AddPasswordEvent += AddPassword;
             userPage.ShowPasswordEvent += ShowPassword;
             userPage.DeletePasswordEvent += DeletePasswordAction;
+            userPage.DeleteAccountEvent += DeleteAccountAction;
             Navigate(userPage);
 
             RefreshUserPage(null, null);
@@ -92,21 +118,102 @@ namespace PMApplication
             Navigate(userPage);
         }
 
+        private async void DeleteAccountAction(object sender, EventArgs e)
+        {
+            MessageBoxResult confirmBox = MessageBox.Show("Are you sure that you want to delete your account?", "Delete Confirmation", MessageBoxButton.YesNo);
+
+            if(confirmBox == MessageBoxResult.No)
+            {
+                return;
+            }
+
+            string deleteResult = "";
+
+            try
+            {
+                deleteResult = await DeleteUser();
+            }
+            catch (PMClientException pme)
+            {
+                if (pme.Reason == PMErrorReason.ConnectionRefused)
+                {
+                    MessageBox.Show("Failed to connect to server, it may be offline", "Error");
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
+                {
+                    MessageBox.Show("Server took too long to respond, it may be offline", "Error");
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.Unknown)
+                {
+                    MessageBox.Show("Server connection failed for unkown reason", "Error");
+                }
+            }
+
+            if (deleteResult != "Success")
+            {
+                MessageBox.Show($"Failed to delete user:\n{deleteResult}", "Error");
+                return;
+            }
+
+            //reset back to new login page
+            addPasswordPage = null;
+            userPage = null;
+            username = "";
+            publicKeyFileName = "";
+            privateKeyFileName = "";
+            session = "";
+
+            loginPage = new LoginPage();
+            loginPage.LoginEvent += Login;
+            loginPage.CreateUserEvent += CreateUser;
+
+            Navigate(loginPage);
+        }
+
         private async void DeletePasswordAction(object sender, EventArgs e)
         {
             PasswordItemEventArgs passwordItemEV = (PasswordItemEventArgs)e;
 
             //get passwordItem and delete password with source
             PasswordItem passwordItem = passwordItemEV.PasswordItem;
-            string result = await DeletePassword(passwordItem.Source);
 
-            if(result != "Success")
+            string result = "";
+
+            try
             {
-                MessageBox.Show($"Failed to delete password:\n{result}");
+                result = await DeletePassword(passwordItem.Source);
+            }
+            catch (PMClientException pme)
+            {
+                if (pme.Reason == PMErrorReason.ConnectionRefused)
+                {
+                    MessageBox.Show("Failed to connect to server, it may be offline", "Error");
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
+                {
+                    MessageBox.Show("Server took too long to respond, it may be offline", "Error");
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.Unknown)
+                {
+                    MessageBox.Show("Server connection failed for unkown reason", "Error");
+                }
+            }
+
+            if (result != "Success")
+            {
+                MessageBox.Show($"Failed to delete password:\n{result}", "Error");
                 return;
             }
 
-            MessageBox.Show("Password was deleted successfully");
+            MessageBox.Show("Password was deleted successfully", "Success");
             userPage.PasswordsDataGrid.Items.Remove(passwordItem);
         }
 
@@ -128,16 +235,43 @@ namespace PMApplication
         {
             SubmitPasswordEventArgs sp = (SubmitPasswordEventArgs)e;
 
-            string result = await SetPassword(sp.Source, sp.Password);
+            string result = "";
+
+            try
+            {
+                result = await SetPassword(sp.Source, sp.Password);
+            }
+            catch (PMClientException pme)
+            {
+                if (pme.Reason == PMErrorReason.ConnectionRefused)
+                {
+                    MessageBox.Show("Failed to connect to server, it may be offline", "Error");
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
+                {
+                    MessageBox.Show("Server took too long to respond, it may be offline", "Error");
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.Unknown)
+                {
+                    MessageBox.Show("Server connection failed for unkown reason", "Error");
+                }
+            }
 
             //prompt user on result
-            if(result != "Success")
+            if (result != "Success")
             {
-                MessageBox.Show($"Failed to add password:\n{result}");
+                MessageBox.Show($"Failed to add password:\n{result}", "Error");
             }
             else
             {
-                MessageBox.Show("Password was added successfully");
+                MessageBox.Show("Password was added successfully", "Success");
+
+                addPasswordPage.SourceTextBox.Text = "";
+                addPasswordPage.PasswordTextBox.Text = "";
             }
 
             //return user to user page and refresh it
@@ -233,6 +367,15 @@ namespace PMApplication
             List<string> sources = JsonSerializer.Deserialize<List<string>>(sourcesJson);
 
             return sources;
+        }
+
+        private async Task<string> DeleteUser()
+        {
+            CommunicationProtocol answer = await Task.Run(() => pmClient.DeleteUser(session));
+
+            string answerStr = Encoding.ASCII.GetString(answer.Body);
+
+            return answerStr;
         }
     }
 }

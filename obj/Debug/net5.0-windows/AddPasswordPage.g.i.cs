@@ -69,7 +69,7 @@ namespace PMApplication {
                 return;
             }
             _contentLoaded = true;
-            System.Uri resourceLocater = new System.Uri("/PMApplication;component/addpasswordpage.xaml", System.UriKind.Relative);
+            System.Uri resourceLocater = new System.Uri("/PMApplication;V1.0.0.0;component/addpasswordpage.xaml", System.UriKind.Relative);
             
             #line 1 "..\..\..\AddPasswordPage.xaml"
             System.Windows.Application.LoadComponent(this, resourceLocater);
