@@ -25,6 +25,11 @@
         <!--Row 1: Passwords-->
         <ScrollViewer Grid.Row="1" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" HorizontalScrollBarVisibility="Auto">
             <DataGrid AutoGenerateColumns="False" HorizontalAlignment="Left" Background="Gray" CanUserReorderColumns="False" CanUserAddRows="False" CanUserDeleteRows="False" CanUserResizeColumns="False" CanUserSortColumns="False" Name="PasswordsDataGrid">
+                <DataGrid.ContextMenu>
+                    <ContextMenu>
+                        <MenuItem Command="Copy" />
+                    </ContextMenu>
+                </DataGrid.ContextMenu>
                 <DataGrid.Resources>
                     <Style TargetType="{x:Type DataGridColumnHeader}">
                         <Setter Property="Background" Value="LightBlue"></Setter>

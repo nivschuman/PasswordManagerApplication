@@ -31,6 +31,20 @@ namespace PMApplication
 
             //hello label
             HelloLabel.Content = $"Hello {username}!";
+
+            PasswordsDataGrid.CopyingRowClipboardContent += UpdateClipboardContent;
+        }
+
+        public void UpdateClipboardContent(object sender, DataGridRowClipboardEventArgs e)
+        {
+            //get password content
+            DataGridClipboardCellContent passwordContent = e.ClipboardRowContent.ElementAt(1);
+            string password = passwordContent.Content.ToString().Trim().Replace("\n", "").Replace("\r", "");
+            DataGridClipboardCellContent content = new DataGridClipboardCellContent(e.Item, (sender as DataGrid).Columns[0], password);
+
+            //keep only password content in clipboard, remove other rows
+            e.ClipboardRowContent.Clear();
+            e.ClipboardRowContent.Add(content);
         }
 
         public void DisplaySources(List<string> sources)

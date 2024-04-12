@@ -176,6 +176,13 @@ namespace PMApplication
 
         private async void DeletePasswordAction(object sender, EventArgs e)
         {
+            MessageBoxResult confirmBox = MessageBox.Show("Are you sure that you want to delete this password?", "Delete Confirmation", MessageBoxButton.YesNo);
+
+            if (confirmBox == MessageBoxResult.No)
+            {
+                return;
+            }
+
             PasswordItemEventArgs passwordItemEV = (PasswordItemEventArgs)e;
 
             //get passwordItem and delete password with source
