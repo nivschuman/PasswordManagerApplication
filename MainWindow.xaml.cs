@@ -159,6 +159,8 @@ namespace PMApplication
                 else if (pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    return;
                 }
             }
 
@@ -220,6 +222,8 @@ namespace PMApplication
                 else if (pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    return;
                 }
             }
 
@@ -274,6 +278,8 @@ namespace PMApplication
                 else if (pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    return;
                 }
             }
 
