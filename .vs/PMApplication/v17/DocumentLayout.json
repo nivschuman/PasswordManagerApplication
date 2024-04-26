@@ -47,9 +47,9 @@
               "RelativeDocumentMoniker": "..\\PasswordManagerClientDLL\\PasswordManagerClient.cs",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\PasswordManagerClient.cs",
               "RelativeToolTip": "..\\PasswordManagerClientDLL\\PasswordManagerClient.cs",
-              "ViewState": "AQIAAGEAAAAAAAAAAADgv2gAAAAMAAAA",
+              "ViewState": "AQIAAAIAAAAAAAAAAADgv2AAAAAQAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-26T17:38:34.131Z",
+              "WhenOpened": "2024-04-26T19:08:17.922Z",
               "EditorCaption": ""
             },
             {
@@ -60,7 +60,7 @@
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAEsAAAAAAAAAAAAowGAAAAANAAAA",
+              "ViewState": "AQIAAHcBAAAAAAAAAAAcwB0BAAAXAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T13:10:57.681Z",
               "EditorCaption": ""
@@ -73,7 +73,7 @@
               "RelativeDocumentMoniker": "UserPage.xaml.cs",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml.cs",
               "RelativeToolTip": "UserPage.xaml.cs",
-              "ViewState": "AQIAACIAAAAAAAAAAAAAACUAAABBAAAA",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAACUAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-17T17:07:19.857Z",
               "EditorCaption": ""
@@ -87,7 +87,8 @@
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml",
               "RelativeToolTip": "UserPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-03T13:48:48.144Z"
+              "WhenOpened": "2024-03-03T13:48:48.144Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -98,7 +99,8 @@
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\AddPasswordPage.xaml",
               "RelativeToolTip": "AddPasswordPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-03T14:09:51.341Z"
+              "WhenOpened": "2024-03-03T14:09:51.341Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -108,9 +110,10 @@
               "RelativeDocumentMoniker": "AddPasswordPage.xaml.cs",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\AddPasswordPage.xaml.cs",
               "RelativeToolTip": "AddPasswordPage.xaml.cs",
-              "ViewState": "AQIAACQAAAAAAAAAAAAAADAAAAAMAAAA",
+              "ViewState": "AQIAACEAAAAAAAAAAABTwDAAAAAMAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:09:40.445Z"
+              "WhenOpened": "2024-03-03T14:09:40.445Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -120,9 +123,10 @@
               "RelativeDocumentMoniker": "Password.cs",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\Password.cs",
               "RelativeToolTip": "Password.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAAAE8AAAAJAAAA",
+              "ViewState": "AQIAADcAAAAAAAAAAABOwE8AAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:23:43.76Z"
+              "WhenOpened": "2024-03-03T14:23:43.76Z",
+              "EditorCaption": ""
             }
           ]
         }

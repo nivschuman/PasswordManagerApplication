@@ -15,6 +15,10 @@ using System.Windows.Shapes;
 using PasswordManagerClientDLL;
 using System.Text.Json;
 using System.Security.Cryptography;
+using NLog;
+using NLog.Config;
+using NLog.Targets;
+using System.IO;
 
 namespace PMApplication
 {
@@ -23,6 +27,8 @@ namespace PMApplication
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        private static readonly Logger logger = LogManager.GetCurrentClassLogger();
+
         private LoginPage loginPage;
         private UserPage userPage;
         private AddPasswordPage addPasswordPage;
@@ -37,16 +43,64 @@ namespace PMApplication
         private PasswordManagerClient pmClient;
         public MainWindow()
         {
+            //server connection
             serverIP = System.Net.IPAddress.Parse("127.0.0.1");
             serverPort = 8080;
 
             pmClient = new PasswordManagerClient(serverIP, serverPort);
 
+            //initialize logger
+            InitializeLog();
+
+            //login page
             loginPage = new LoginPage();
             loginPage.LoginEvent += Login;
             loginPage.CreateUserEvent += CreateUser;
 
+            logger.Info("Started main window with new login page");
+
             Navigate(loginPage);
+        }
+
+        public static void InitializeLog()
+        {
+            //create logs directory
+            string logsDirectory = "logs";
+
+            if(!Directory.Exists(logsDirectory))
+            {
+                Directory.CreateDirectory(logsDirectory);
+            }
+
+            //get current date
+            DateTime now = DateTime.Now;
+            string nowDate = now.ToString("dd_MM_yyyy");
+            string fileName = $"{nowDate}_logfile.log";
+
+            //logger configuration - file target
+            LoggingConfiguration config = new LoggingConfiguration();
+
+            FileTarget fileTarget = new FileTarget("file")
+            {
+                Name = "LogFile",
+                FileName = System.IO.Path.Combine(logsDirectory, fileName),
+                Layout = "${longdate}|${level:uppercase=true}|${callsite}|${message}"
+            };
+
+            config.AddTarget(fileTarget);
+            config.AddRule(LogLevel.Debug, LogLevel.Fatal, fileTarget);
+
+            //logger configuration - colored console target
+            ColoredConsoleTarget consoleTarget = new ColoredConsoleTarget()
+            {
+                Name = "ColoredConsole",
+                Layout = "${date:format=HH\\:mm\\:ss} ${level:uppercase=true} ${message}"
+            };
+
+            config.AddTarget(consoleTarget);
+            config.AddRule(LogLevel.Trace, LogLevel.Fatal, consoleTarget);
+
+            LogManager.Configuration = config;
         }
 
         private async void Login(object sender, EventArgs e)
@@ -55,6 +109,8 @@ namespace PMApplication
             username = ue.UserName;
             publicKeyFileName = ue.PublicKeyFileName;
             privateKeyFileName = ue.PrivateKeyFileName;
+
+            logger.Info("Entered login with username: {username}, public key: {publicKey}, private key: {privateKey}", username, publicKeyFileName, privateKeyFileName);
 
             pmClient.ImportRSAKeys(publicKeyFileName, privateKeyFileName);
 
@@ -70,17 +126,23 @@ namespace PMApplication
                 {
                     MessageBox.Show("Failed to connect to server, it may be offline", "Error");
 
+                    logger.Error("Connection to server refused: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if(pme.Reason == PMErrorReason.ConnectionTimeouted)
                 {
                     MessageBox.Show("Server took too long to respond, it may be offline", "Error");
 
+                    logger.Error("Connection to server timeouted: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if(pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    logger.Error("Server connection failed: {@SocketException}", pme.SE);
 
                     return;
                 }
@@ -89,6 +151,8 @@ namespace PMApplication
             {
                 MessageBox.Show("Decryption failed during login, try using different keys", "Error");
 
+                logger.Error("Decryption failed: {@CryptographicException}", ce);
+
                 return;
             }
             
@@ -96,6 +160,9 @@ namespace PMApplication
             if(answerStr != "Succeeded")
             {
                 MessageBox.Show(answerStr, "Error");
+
+                logger.Warn("Failed to login to user {username}: {answerStr}", username, answerStr);
+
                 return;
             }
 
@@ -106,6 +173,8 @@ namespace PMApplication
             userPage.DeletePasswordEvent += DeletePasswordAction;
             userPage.DeleteAccountEvent += DeleteAccountAction;
             Navigate(userPage);
+
+            logger.Info("Created and navigated to new user page for {username}", username);
 
             RefreshUserPage(null, null);
         }
@@ -120,11 +189,15 @@ namespace PMApplication
             }
 
             Navigate(addPasswordPage);
+
+            logger.Info("Created and navigated to new add password page");
         }
 
         private void CancelSubmitPassword(object sender, EventArgs e)
         {
             Navigate(userPage);
+
+            logger.Info("Canceled password submission, navigated to userPage");
         }
 
         private async void DeleteAccountAction(object sender, EventArgs e)
@@ -133,6 +206,7 @@ namespace PMApplication
 
             if(confirmBox == MessageBoxResult.No)
             {
+                logger.Info("Canceled account delete action, returning");
                 return;
             }
 
@@ -148,17 +222,23 @@ namespace PMApplication
                 {
                     MessageBox.Show("Failed to connect to server, it may be offline", "Error");
 
+                    logger.Error("Connection to server refused: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
                 {
                     MessageBox.Show("Server took too long to respond, it may be offline", "Error");
 
+                    logger.Error("Connection to server timeouted: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if (pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    logger.Error("Server connection failed: {@SocketException}", pme.SE);
 
                     return;
                 }
@@ -167,8 +247,13 @@ namespace PMApplication
             if (deleteResult != "Success")
             {
                 MessageBox.Show($"Failed to delete user:\n{deleteResult}", "Error");
+
+                logger.Warn("Failed to delete user {username}: {deleteResult}", username, deleteResult);
+
                 return;
             }
+
+            logger.Info("User {username} deleted successfully, returning to login page", username);
 
             //reset back to new login page
             addPasswordPage = null;
@@ -187,17 +272,19 @@ namespace PMApplication
 
         private async void DeletePasswordAction(object sender, EventArgs e)
         {
-            MessageBoxResult confirmBox = MessageBox.Show("Are you sure that you want to delete this password?", "Delete Confirmation", MessageBoxButton.YesNo);
-
-            if (confirmBox == MessageBoxResult.No)
-            {
-                return;
-            }
-
             PasswordItemEventArgs passwordItemEV = (PasswordItemEventArgs)e;
 
             //get passwordItem and delete password with source
             PasswordItem passwordItem = passwordItemEV.PasswordItem;
+            
+            MessageBoxResult confirmBox = MessageBox.Show("Are you sure that you want to delete this password?", "Delete Confirmation", MessageBoxButton.YesNo);
+
+            if (confirmBox == MessageBoxResult.No)
+            {
+                logger.Info("Canceled on deleting password with source={source}, returning", passwordItem.Source);
+
+                return;
+            }
 
             string result = "";
 
@@ -211,17 +298,23 @@ namespace PMApplication
                 {
                     MessageBox.Show("Failed to connect to server, it may be offline", "Error");
 
+                    logger.Error("Connection to server refused: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
                 {
                     MessageBox.Show("Server took too long to respond, it may be offline", "Error");
 
+                    logger.Error("Connection to server timeouted: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if (pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    logger.Error("Server connection failed: {@SocketException}", pme.SE);
 
                     return;
                 }
@@ -230,8 +323,13 @@ namespace PMApplication
             if (result != "Success")
             {
                 MessageBox.Show($"Failed to delete password:\n{result}", "Error");
+
+                logger.Warn("Failed to delete password with source={source}: {result}", passwordItem.Source, result);
+
                 return;
             }
+
+            logger.Info("Password with source={source} was deleted successfully", passwordItem.Source);
 
             MessageBox.Show("Password was deleted successfully", "Success");
             userPage.PasswordsDataGrid.Items.Remove(passwordItem);
@@ -243,7 +341,40 @@ namespace PMApplication
 
             //place password inside password item
             PasswordItem passwordItem = passwordItemEV.PasswordItem;
-            passwordItem.Password = await GetPassword(passwordItem.Source);
+
+            try
+            {
+                passwordItem.Password = await GetPassword(passwordItem.Source);
+            }
+            catch (PMClientException pme)
+            {
+                if (pme.Reason == PMErrorReason.ConnectionRefused)
+                {
+                    MessageBox.Show("Failed to connect to server, it may be offline", "Error");
+
+                    logger.Error("Connection to server refused: {@SocketException}", pme.SE);
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
+                {
+                    MessageBox.Show("Server took too long to respond, it may be offline", "Error");
+
+                    logger.Error("Connection to server timeouted: {@SocketException}", pme.SE);
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.Unknown)
+                {
+                    MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    logger.Error("Server connection failed: {@SocketException}", pme.SE);
+
+                    return;
+                }
+            }
+
+            logger.Info("Got password for {source} from server", passwordItem.Source);
 
             //remove previous item and insert updated item to reflect change
             int idx = userPage.PasswordsDataGrid.Items.IndexOf(passwordItem);
@@ -267,17 +398,23 @@ namespace PMApplication
                 {
                     MessageBox.Show("Failed to connect to server, it may be offline", "Error");
 
+                    logger.Error("Connection to server refused: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
                 {
                     MessageBox.Show("Server took too long to respond, it may be offline", "Error");
 
+                    logger.Error("Connection to server timeouted: {@SocketException}", pme.SE);
+
                     return;
                 }
                 else if (pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    logger.Error("Server connection failed: {@SocketException}", pme.SE);
 
                     return;
                 }
@@ -287,6 +424,8 @@ namespace PMApplication
             if (result != "Success")
             {
                 MessageBox.Show($"Failed to add password:\n{result}", "Error");
+
+                logger.Warn("Failed to add password for source={source}: {result}", sp.Source, result);
             }
             else
             {
@@ -294,6 +433,8 @@ namespace PMApplication
 
                 addPasswordPage.SourceTextBox.Text = "";
                 addPasswordPage.PasswordTextBox.Text = "";
+
+                logger.Info("Set password successfully for source={source}", sp.Source);
             }
 
             //return user to user page and refresh it
@@ -309,11 +450,49 @@ namespace PMApplication
                 return;
             }
 
-            List<string> sources = await GetSources();
+            List<string> sources = null;
+
+            try
+            {
+                sources = await GetSources();
+            }
+            catch (PMClientException pme)
+            {
+                if (pme.Reason == PMErrorReason.ConnectionRefused)
+                {
+                    MessageBox.Show("Failed to connect to server, it may be offline", "Error");
+
+                    logger.Error("Connection to server refused: {@SocketException}", pme.SE);
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
+                {
+                    MessageBox.Show("Server took too long to respond, it may be offline", "Error");
+
+                    logger.Error("Connection to server timeouted: {@SocketException}", pme.SE);
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.Unknown)
+                {
+                    MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    logger.Error("Server connection failed: {@SocketException}", pme.SE);
+
+                    return;
+                }
+            }
 
             if (sources != null)
             {
+                logger.Info("Got sources for user {username}, displaying them", username);
+
                 userPage.DisplaySources(sources);
+            }
+            else
+            {
+                logger.Warn("Failed to get sources for user {username}", username);
             }
         }
 
@@ -326,7 +505,40 @@ namespace PMApplication
 
             pmClient.CreateNewRSAKeys(publicKeyFileName, privateKeyFileName);
 
-            CommunicationProtocol answer = await Task.Run(() => pmClient.CreateUser(username));
+            CommunicationProtocol answer;
+            try
+            {
+                answer = await Task.Run(() => pmClient.CreateUser(username));
+            }
+            catch (PMClientException pme)
+            {
+                if (pme.Reason == PMErrorReason.ConnectionRefused)
+                {
+                    MessageBox.Show("Failed to connect to server, it may be offline", "Error");
+
+                    logger.Error("Connection to server refused: {@SocketException}", pme.SE);
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.ConnectionTimeouted)
+                {
+                    MessageBox.Show("Server took too long to respond, it may be offline", "Error");
+
+                    logger.Error("Connection to server timeouted: {@SocketException}", pme.SE);
+
+                    return;
+                }
+                else if (pme.Reason == PMErrorReason.Unknown)
+                {
+                    MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    logger.Error("Server connection failed: {@SocketException}", pme.SE);
+
+                    return;
+                }
+            }
+
+            logger.Info("successfully created user {username} with public key: {publicKey}, private key: {privateKey}", publicKeyFileName, privateKeyFileName);
 
             ue.PublicKeyFileName = publicKeyFileName;
             ue.PrivateKeyFileName = privateKeyFileName;
@@ -346,6 +558,8 @@ namespace PMApplication
         private async Task<string> GetPassword(string source)
         {
             CommunicationProtocol answer = await Task.Run(() => pmClient.GetPassword(source, session));
+
+            logger.Debug("Got password, decrypting it");
             string password = pmClient.DecryptPassword(answer.Body);
 
             return password;

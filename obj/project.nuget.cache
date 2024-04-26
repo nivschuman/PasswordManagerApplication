@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "hYzuGyyco9WnAJlJJlYz/MVbcOQx6mWPCuUMyGDHDytlZfrZCxQR+8JEDD7XxexoC13thRdSS/wn94vTM6sh8g==",
+  "dgSpecHash": "vscu8/W2nHwgPoaFLHZqdsld64a/anRmMT7YupfrpOGkEtnUdgyOfzyLpmbQXgg4gyCIx5A1IQ/xfNAkhCPwVg==",
   "success": true,
   "projectFilePath": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\PMApplication.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\nivsc\\.nuget\\packages\\nlog\\5.2.8\\nlog.5.2.8.nupkg.sha512"
+  ],
   "logs": []
 }

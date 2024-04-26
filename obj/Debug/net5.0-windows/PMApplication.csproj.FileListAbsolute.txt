@@ -30,3 +30,4 @@ C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\refint\PMAppl
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\AddPasswordPage.g.cs
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\AddPasswordPage.baml
 C:\Users\nivsc\source\repos\PMApplication\obj\Debug\net5.0-windows\PMApplic.30D81739.Up2Date
+C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\NLog.dll
