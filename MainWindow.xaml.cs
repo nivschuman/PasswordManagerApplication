@@ -14,6 +14,7 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using PasswordManagerClientDLL;
 using System.Text.Json;
+using System.Security.Cryptography;
 
 namespace PMApplication
 {
@@ -80,7 +81,15 @@ namespace PMApplication
                 else if(pme.Reason == PMErrorReason.Unknown)
                 {
                     MessageBox.Show("Server connection failed for unkown reason", "Error");
+
+                    return;
                 }
+            }
+            catch(CryptographicException ce)
+            {
+                MessageBox.Show("Decryption failed during login, try using different keys", "Error");
+
+                return;
             }
             
 
