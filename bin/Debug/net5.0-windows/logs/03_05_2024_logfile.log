@@ -1,0 +1,8 @@
+2024-05-03 09:28:03.4685|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-03 09:28:26.5985|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPrivateKey"
+2024-05-03 09:28:26.9005|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-03 09:28:27.1856|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-03 09:28:44.7828|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-03 09:28:44.7850|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-03 09:28:46.0209|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-03 09:28:46.0209|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server

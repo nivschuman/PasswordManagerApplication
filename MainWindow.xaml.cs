@@ -157,7 +157,7 @@ namespace PMApplication
             }
             
 
-            if(answerStr != "Succeeded")
+            if(answerStr != "Success")
             {
                 MessageBox.Show(answerStr, "Error");
 
@@ -505,7 +505,7 @@ namespace PMApplication
 
             pmClient.CreateNewRSAKeys(publicKeyFileName, privateKeyFileName);
 
-            CommunicationProtocol answer;
+            CommunicationProtocol answer = null;
             try
             {
                 answer = await Task.Run(() => pmClient.CreateUser(username));
@@ -538,7 +538,18 @@ namespace PMApplication
                 }
             }
 
-            logger.Info("successfully created user {username} with public key: {publicKey}, private key: {privateKey}", publicKeyFileName, privateKeyFileName);
+            string result = Encoding.ASCII.GetString(answer.Body);
+
+            if(result != "Success")
+            {
+                MessageBox.Show($"Failed to create user:\n{result}");
+
+                logger.Warn("Failed to create user {username} with public key: {publicKey}, private key: {privateKey} - {result}", username, publicKeyFileName, privateKeyFileName, result);
+
+                return;
+            }
+
+            logger.Info("successfully created user {username} with public key: {publicKey}, private key: {privateKey}", username, publicKeyFileName, privateKeyFileName);
 
             ue.PublicKeyFileName = publicKeyFileName;
             ue.PrivateKeyFileName = privateKeyFileName;

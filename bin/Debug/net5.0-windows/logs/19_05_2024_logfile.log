@@ -1,0 +1,20 @@
+2024-05-19 20:07:08.0656|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-19 20:07:43.5272|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPrivateKey"
+2024-05-19 20:07:43.7198|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-19 20:07:43.9461|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-19 20:07:47.5056|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-19 20:07:47.5056|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-19 20:07:47.9396|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-19 20:07:47.9396|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-19 20:08:33.2723|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-19 20:08:33.2723|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-19 20:08:34.6164|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-19 20:08:37.8785|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-19 20:08:37.8802|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-19 20:08:42.3511|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-19 20:08:42.3511|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-19 20:08:43.2922|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-19 20:08:45.7568|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-19 20:08:45.7568|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-19 20:08:46.5847|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-19 20:08:46.5847|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server

@@ -1,0 +1,18 @@
+2024-05-21 15:36:30.1689|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-21 15:36:41.4540|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPrivateKey"
+2024-05-21 15:36:42.2264|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-21 15:36:42.7435|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-21 15:36:44.5079|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-21 15:36:44.5079|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-21 15:36:45.0462|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-21 15:36:45.0462|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-21 15:36:47.5920|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-21 15:36:50.1141|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-21 15:36:50.1141|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-21 15:36:50.5757|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-21 15:36:50.5757|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-21 15:36:59.1373|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-21 15:37:35.7228|WARN|PMApplication.MainWindow.CreateUser|Failed to create user "alon" with public key: "alonPublicKey", private key: "alonPrivateKey" - "User with this username already exists, choose a different username"
+2024-05-21 15:37:38.7206|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPrivateKey"
+2024-05-21 15:37:38.7755|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-21 15:37:38.8569|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
