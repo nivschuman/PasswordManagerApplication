@@ -492,6 +492,8 @@ namespace PMApplication
             }
             else
             {
+                MessageBox.Show("Failed to get sources from server", "Error");
+
                 logger.Warn("Failed to get sources for user {username}", username);
             }
         }
