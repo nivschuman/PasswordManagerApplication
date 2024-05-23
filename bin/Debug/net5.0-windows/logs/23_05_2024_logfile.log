@@ -1,0 +1,29 @@
+2024-05-23 19:10:27.6889|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-23 19:16:36.4950|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPrivateKey"
+2024-05-23 19:16:36.7693|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-23 19:16:37.0252|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-23 19:19:01.7752|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-23 19:19:01.7752|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-23 19:19:02.3842|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-23 19:19:02.3842|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-23 19:19:03.4502|INFO|PMApplication.MainWindow.AddPassword|Created and navigated to new add password page
+2024-05-23 19:19:06.9907|INFO|PMApplication.MainWindow.CancelSubmitPassword|Canceled password submission, navigated to userPage
+2024-05-23 19:19:41.1350|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-23 19:19:42.0936|INFO|PMApplication.MainWindow.AddPassword|Created and navigated to new add password page
+2024-05-23 19:20:08.0671|INFO|PMApplication.MainWindow.SubmitPassword|Set password successfully for source="microsoft"
+2024-05-23 19:20:08.0728|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-23 19:20:22.6645|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-23 19:20:22.6645|INFO|PMApplication.MainWindow.ShowPassword|Got password for "microsoft" from server
+2024-05-23 19:31:22.5554|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-23 19:31:22.5554|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-23 19:34:50.5805|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-23 19:57:38.0595|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-23 19:57:58.2922|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPrivateKey"
+2024-05-23 19:57:58.5339|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-23 19:57:58.6143|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-23 19:58:10.9470|INFO|PMApplication.MainWindow.AddPassword|Created and navigated to new add password page
+2024-05-23 19:59:30.4857|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-23 19:59:39.9401|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\alonPrivateKey"
+2024-05-23 19:59:40.0854|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-23 19:59:40.1822|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-23 19:59:44.2448|INFO|PMApplication.MainWindow.AddPassword|Created and navigated to new add password page

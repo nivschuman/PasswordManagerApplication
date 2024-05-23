@@ -3,20 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\addpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:addpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
       "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\addpasswordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,24 +30,24 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAJUAAAAAAAAAAAAowJ8AAAAmAAAA",
+              "ViewState": "AQIAAAgAAAAAAAAAAAAwwOgAAAAgAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T13:10:57.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "UserPage.xaml.cs",
               "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml.cs",
               "RelativeDocumentMoniker": "UserPage.xaml.cs",
@@ -55,23 +55,23 @@
               "RelativeToolTip": "UserPage.xaml.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAACUAAABBAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T17:07:19.857Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-03-17T17:07:19.857Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 2,
               "Title": "UserPage.xaml",
               "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml",
               "RelativeDocumentMoniker": "UserPage.xaml",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml",
               "RelativeToolTip": "UserPage.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-03T13:48:48.144Z"
+              "WhenOpened": "2024-03-03T13:48:48.144Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "AddPasswordPage.xaml",
               "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\AddPasswordPage.xaml",
               "RelativeDocumentMoniker": "AddPasswordPage.xaml",
