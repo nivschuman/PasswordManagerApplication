@@ -17,15 +17,34 @@ using System.Windows.Shapes;
 namespace PMApplication
 {
     /// <summary>
-    /// Interaction logic for LoginPage.xaml
+    /// Page for logging in or creating new user.
     /// </summary>
     public partial class LoginPage : Page
     {
+        /// <summary>
+        /// Login event for when login button is clicked.
+        /// </summary>
         public event EventHandler LoginEvent;
+
+        /// <summary>
+        /// Create user event for when create user button is clicked.
+        /// </summary>
         public event EventHandler CreateUserEvent;
 
+        /// <summary>
+        /// Name of the chosen private key file.
+        /// </summary>
         private string privateKeyFileName;
+
+        /// <summary>
+        /// Name of the chosen public key file.
+        /// </summary>
         private string publicKeyFileName;
+
+        /// <summary>
+        /// Initializes a <see cref="LoginPage"/> class.
+        /// Ties button click events to their appropriate functions.
+        /// </summary>
         public LoginPage()
         {
             InitializeComponent();
@@ -37,6 +56,12 @@ namespace PMApplication
             newUserButton.Click += CreateUser;
         }
 
+        /// <summary>
+        /// Called when login button is clicked.
+        /// Calls the login event with public key file name, private key file name and username from textbox.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (login button).</param>
+        /// <param name="e">The event args that are passed to the event.</param>
         private void Login(object sender, EventArgs e)
         {
             if(LoginEvent != null)
@@ -50,6 +75,12 @@ namespace PMApplication
             }
         }
 
+        /// <summary>
+        /// Called when create user button is clicked.
+        /// Calls the create user event with public key file name, private key file name and username from textbox.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (create user button).</param>
+        /// <param name="e">The event args that are passed to the event.</param>
         private void CreateUser(object sender, EventArgs e)
         {
             if(CreateUserEvent != null)
@@ -63,6 +94,12 @@ namespace PMApplication
             }
         }
 
+        /// <summary>
+        /// Called when public/private key choose file button is clicked.
+        /// Lets the user choose a file and shows it onto appropriate label.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (public/private key choose file button).</param>
+        /// <param name="e">The event args passed to the event.</param>
         private void ChooseFileButtonClick(object sender, EventArgs e)
         {
             bool publicKey = sender == publicKeyChooseFileButton;
@@ -78,6 +115,10 @@ namespace PMApplication
             privateKeyFileLabel.ToolTip = privateKeyFileName;
         }
 
+        /// <summary>
+        /// Function to open dialog for user to choose a file.
+        /// </summary>
+        /// <returns>The name of the chosen file.</returns>
         private string ChooseFile()
         {
             OpenFileDialog openFileDialog = new OpenFileDialog();

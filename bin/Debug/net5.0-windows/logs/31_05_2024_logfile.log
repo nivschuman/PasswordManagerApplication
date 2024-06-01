@@ -1,0 +1,28 @@
+2024-05-31 19:14:32.4330|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-31 19:14:52.7058|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-05-31 19:14:53.6580|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-05-31 19:14:54.1365|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-31 19:14:55.9707|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-31 19:14:55.9707|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-05-31 19:14:56.6811|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-31 19:14:56.6811|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-31 19:14:57.2045|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-31 19:14:57.2045|INFO|PMApplication.MainWindow.ShowPassword|Got password for "microsoft" from server
+2024-05-31 19:15:05.9494|INFO|PMApplication.MainWindow.AddPassword|Created and navigated to new add password page
+2024-05-31 19:15:18.0663|INFO|PMApplication.MainWindow.SubmitPassword|Set password successfully for source="Activision"
+2024-05-31 19:15:18.0663|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-31 19:15:19.5261|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-31 19:15:19.5261|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Activision" from server
+2024-05-31 19:15:22.3623|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-31 19:15:22.3623|INFO|PMApplication.MainWindow.ShowPassword|Got password for "microsoft" from server
+2024-05-31 19:15:25.2653|INFO|PMApplication.MainWindow.DeletePasswordAction|Canceled on deleting password with source="microsoft", returning
+2024-05-31 19:15:27.7695|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-31 19:15:27.7695|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-05-31 19:15:28.6843|INFO|PMApplication.MainWindow.AddPassword|Created and navigated to new add password page
+2024-05-31 19:15:30.3707|INFO|PMApplication.MainWindow.CancelSubmitPassword|Canceled password submission, navigated to userPage
+2024-05-31 19:15:33.1555|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-05-31 19:15:34.5167|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-05-31 19:15:34.5167|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Activision" from server
+2024-05-31 19:46:32.2517|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-05-31 19:46:45.4520|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-05-31 19:47:03.2593|ERROR|PMApplication.MainWindow.Login|Connection to server refused: {"Type":"System.Net.Internals.SocketExceptionFactory+ExtendedSocketException", "Message":"No connection could be made because the target machine actively refused it. 127.0.0.1:8080", "SocketErrorCode":"ConnectionRefused", "ErrorCode":10061, "NativeErrorCode":10061, "TargetSite":"Void DoConnect(System.Net.EndPoint, System.Net.Internals.SocketAddress)", "StackTrace":"   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)\r\n   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)\r\n   at PasswordManagerClientDLL.Client.SendAndReceiveSSL(String method, Byte[] body, String session, String contentType) in C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\Client.cs:line 209\r\n   at PasswordManagerClientDLL.Client.SendAndReceive(String method, Byte[] body, String session, String contentType) in C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\Client.cs:line 42\r\n   at PasswordManagerClientDLL.PasswordManagerClient.LoginRequest(String userName) in C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\PasswordManagerClient.cs:line 96", "Data":{}, "Source":"System.Net.Sockets", "HResult":-2147467259}

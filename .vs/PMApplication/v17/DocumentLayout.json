@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:userpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:userpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\usereventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:usereventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\addpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:addpasswordpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\submitpasswordeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:submitpasswordeventargs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\addpasswordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:addpasswordpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\password.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:password.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:loginpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|c:\\users\\nivsc\\source\\repos\\pmapplication\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B18F5EA4-5D08-4D33-AD2D-0B6A097A65B3}|PMApplication.csproj|solutionrelative:mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,64 +39,80 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "UserPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml.cs",
+              "RelativeDocumentMoniker": "UserPage.xaml.cs",
+              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml.cs",
+              "RelativeToolTip": "UserPage.xaml.cs",
+              "ViewState": "AQIAAKEAAAAAAAAAAAAowKkAAAA/AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T14:57:02.922Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "UserEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserEventArgs.cs",
+              "RelativeDocumentMoniker": "UserEventArgs.cs",
+              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserEventArgs.cs",
+              "RelativeToolTip": "UserEventArgs.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA0wBgAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T14:56:09.145Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "SubmitPasswordEventArgs.cs",
+              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\SubmitPasswordEventArgs.cs",
+              "RelativeDocumentMoniker": "SubmitPasswordEventArgs.cs",
+              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\SubmitPasswordEventArgs.cs",
+              "RelativeToolTip": "SubmitPasswordEventArgs.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAywBMAAAAgAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-06-01T14:55:27.244Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\MainWindow.xaml.cs",
               "RelativeToolTip": "MainWindow.xaml.cs",
-              "ViewState": "AQIAAOABAAAAAAAAAAAAAO4BAABOAAAA",
+              "ViewState": "AQIAAHACAAAAAAAAAAAQwBQDAAA1AAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-03T13:10:57.681Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml.cs",
-              "RelativeDocumentMoniker": "UserPage.xaml.cs",
-              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml.cs",
-              "RelativeToolTip": "UserPage.xaml.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABEAAAARAAAA",
+              "DocumentIndex": 4,
+              "Title": "LoginPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\LoginPage.xaml.cs",
+              "RelativeDocumentMoniker": "LoginPage.xaml.cs",
+              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\LoginPage.xaml.cs",
+              "RelativeToolTip": "LoginPage.xaml.cs",
+              "ViewState": "AQIAAHEAAAAAAAAAAAAAAHgAAAAxAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-17T17:07:19.857Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "UserPage.xaml",
-              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml",
-              "RelativeDocumentMoniker": "UserPage.xaml",
-              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\UserPage.xaml",
-              "RelativeToolTip": "UserPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-03T13:48:48.144Z",
+              "WhenOpened": "2024-06-01T14:33:37.859Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "AddPasswordPage.xaml",
-              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\AddPasswordPage.xaml",
-              "RelativeDocumentMoniker": "AddPasswordPage.xaml",
-              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\AddPasswordPage.xaml",
-              "RelativeToolTip": "AddPasswordPage.xaml",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-03-03T14:09:51.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "AddPasswordPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\AddPasswordPage.xaml.cs",
-              "RelativeDocumentMoniker": "AddPasswordPage.xaml.cs",
-              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\AddPasswordPage.xaml.cs",
-              "RelativeToolTip": "AddPasswordPage.xaml.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAABTwDAAAAAMAAAA",
+              "Title": "Password.cs",
+              "DocumentMoniker": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\Password.cs",
+              "RelativeDocumentMoniker": "Password.cs",
+              "ToolTip": "C:\\Users\\nivsc\\source\\repos\\PMApplication\\Password.cs",
+              "RelativeToolTip": "Password.cs",
+              "ViewState": "AQIAAA4AAAAAAAAAAAAQwBUAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-03T14:09:40.445Z"
+              "WhenOpened": "2024-06-01T14:51:10.057Z",
+              "EditorCaption": ""
             }
           ]
         }

@@ -7,10 +7,20 @@ using System.Threading.Tasks;
 
 namespace PMApplication
 {
+    /// <summary>
+    /// Static class to generate a strong password.
+    /// Class was copied from online source.
+    /// </summary>
     public static class Password
     {
+        /// <summary>
+        /// Static character array of punctuations.
+        /// </summary>
         private static readonly char[] Punctuations = "!@#$%^&*()_-+=[{]};:>|./?".ToCharArray();
 
+        /// <summary>
+        /// Function to generate the password.
+        /// </summary>
         public static string Generate(int length, int numberOfNonAlphanumericCharacters)
         {
             if (length < 1 || length > 128)

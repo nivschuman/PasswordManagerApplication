@@ -1,0 +1,15 @@
+2024-06-01 16:04:09.9567|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-06-01 16:04:32.3619|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-06-01 16:04:33.3531|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-06-01 16:04:33.8787|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-06-01 16:04:35.6537|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-01 16:04:35.6537|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Activision" from server
+2024-06-01 16:04:38.2924|INFO|PMApplication.MainWindow.DeletePasswordAction|Password with source="Activision" was deleted successfully
+2024-06-01 16:04:41.1454|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-06-01 16:04:42.0552|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-01 16:04:42.0552|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-06-01 16:04:43.0360|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-01 16:04:43.0360|INFO|PMApplication.MainWindow.ShowPassword|Got password for "microsoft" from server
+2024-06-01 16:04:43.6573|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-01 16:04:43.6573|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-06-01 16:04:45.2749|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them

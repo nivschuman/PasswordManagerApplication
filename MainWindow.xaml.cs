@@ -23,24 +23,72 @@ using System.IO;
 namespace PMApplication
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Main application window to store pages.
     /// </summary>
     public partial class MainWindow : NavigationWindow
     {
+        /// <summary>
+        /// Logger variable for logging application events and errors
+        /// </summary>
         private static readonly Logger logger = LogManager.GetCurrentClassLogger();
 
+        /// <summary>
+        /// <see cref="LoginPage"/> for page to login.
+        /// </summary>
         private LoginPage loginPage;
+
+        /// <summary>
+        /// <see cref="UserPage"/> for main user activity.
+        /// </summary>
         private UserPage userPage;
+
+        /// <summary>
+        /// <see cref="AddPasswordPage"/> for adding new password.
+        /// </summary>
         private AddPasswordPage addPasswordPage;
 
+        /// <summary>
+        /// Username of the logged in user.
+        /// </summary>
         private string username;
+
+        /// <summary>
+        /// Public key file name for the logged in user.
+        /// </summary>
         private string publicKeyFileName;
+
+        /// <summary>
+        /// Private key file name for the logged in user.
+        /// </summary>
         private string privateKeyFileName;
+
+        /// <summary>
+        /// Session token for the logged in user.
+        /// </summary>
         private string session;
 
+        /// <summary>
+        /// IP Address of the server.
+        /// </summary>
         private System.Net.IPAddress serverIP;
+
+        /// <summary>
+        /// Port of the server.
+        /// </summary>
         private int serverPort;
+
+        /// <summary>
+        /// Password manager client for speaking with server, <see cref="PasswordManagerClient"/>.
+        /// </summary>
         private PasswordManagerClient pmClient;
+
+        /// <summary>
+        /// Initializes main window.
+        /// Server IP and server port are initialized.
+        /// Password manager client is initialized.
+        /// Logger is initialized.
+        /// Login page is created and navigated into.
+        /// </summary>
         public MainWindow()
         {
             //server connection
@@ -62,6 +110,12 @@ namespace PMApplication
             Navigate(loginPage);
         }
 
+        /// <summary>
+        /// Initalizes the logger.
+        /// Logs are stored in logs directory.
+        /// New log file is created on every new date (day,month,year).
+        /// A colored console logger is also created.
+        /// </summary>
         public static void InitializeLog()
         {
             //create logs directory
@@ -103,6 +157,18 @@ namespace PMApplication
             LogManager.Configuration = config;
         }
 
+        /// <summary>
+        /// Called through login page, login button click event.
+        /// Tries to log in to user with given username, public key file and private key file.
+        /// Username, public key file name and private key file name are passed through event args.
+        /// On login success new user page is created and navigated to.
+        /// New user page is refreshed.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (login button).</param>
+        /// <param name="e">The event args passed to the event (UserEventArgs).</param>
+        /// <exception cref="PMClientException">
+        /// Thrown by password manager client on socket errors.
+        /// </exception>
         private async void Login(object sender, EventArgs e)
         {
             UserEventArgs ue = (UserEventArgs)e;
@@ -179,6 +245,12 @@ namespace PMApplication
             RefreshUserPage(null, null);
         }
 
+        /// <summary>
+        /// Called through user page, add password button click event.
+        /// Navigates to add password page, creates a page if one has not been created yet.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (add password button).</param>
+        /// <param name="e">The event args passed to the event.</param>
         private void AddPassword(object sender, EventArgs e)
         {
             if(addPasswordPage == null)
@@ -193,6 +265,12 @@ namespace PMApplication
             logger.Info("Created and navigated to new add password page");
         }
 
+        /// <summary>
+        /// Called through add password page, cancel button click event.
+        /// Navigates back to user page.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (cancel button).</param>
+        /// <param name="e">The event args passed to the event.</param>
         private void CancelSubmitPassword(object sender, EventArgs e)
         {
             Navigate(userPage);
@@ -200,6 +278,16 @@ namespace PMApplication
             logger.Info("Canceled password submission, navigated to userPage");
         }
 
+        /// <summary>
+        /// Called through user page, delete account button click.
+        /// Requests server to delete the logged in user.
+        /// On success navigates to login page.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (delete account button).</param>
+        /// <param name="e">The event args passed to the event.</param>
+        /// <exception cref="PMClientException">
+        /// Thrown by password manager client on socket errors.
+        /// </exception>
         private async void DeleteAccountAction(object sender, EventArgs e)
         {
             MessageBoxResult confirmBox = MessageBox.Show("Are you sure that you want to delete your account?", "Delete Confirmation", MessageBoxButton.YesNo);
@@ -270,6 +358,16 @@ namespace PMApplication
             Navigate(loginPage);
         }
 
+        /// <summary>
+        /// Called through user page, delete password button.
+        /// Requests server to delete the specified password for logged in user.
+        /// specified password is passed through event args.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (specific delete password button).</param>
+        /// <param name="e">The event args passed to the event (password item event args).</param>
+        /// <exception cref="PMClientException">
+        /// Thrown by password manager client on socket errors.
+        /// </exception>
         private async void DeletePasswordAction(object sender, EventArgs e)
         {
             PasswordItemEventArgs passwordItemEV = (PasswordItemEventArgs)e;
@@ -335,6 +433,16 @@ namespace PMApplication
             userPage.PasswordsDataGrid.Items.Remove(passwordItem);
         }
 
+        /// <summary>
+        /// Called through user page, show password button.
+        /// Gets password from server and places it onto grid in user page (for logged in user).
+        /// Password data is passed through event args.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (specific show password button).</param>
+        /// <param name="e">The event args passed to the event (password item event args).</param>
+        /// <exception cref="PMClientException">
+        /// Thrown by password manager client on socket errors.
+        /// </exception>
         private async void ShowPassword(object sender, EventArgs e)
         {
             PasswordItemEventArgs passwordItemEV = (PasswordItemEventArgs)e;
@@ -382,6 +490,16 @@ namespace PMApplication
             userPage.PasswordsDataGrid.Items.Insert(idx, passwordItem);
         }
 
+        /// <summary>
+        /// Called through add password page, submit button.
+        /// Requests server to set specified password with specified source (for logged in user).
+        /// Navigates back to user page on success or failure.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (submit button).</param>
+        /// <param name="e">The event args passed to the event (submit password event args).</param>
+        /// <exception cref="PMClientException">
+        /// Thrown by password manager client on socket errors.
+        /// </exception>
         private async void SubmitPassword(object sender, EventArgs e)
         {
             SubmitPasswordEventArgs sp = (SubmitPasswordEventArgs)e;
@@ -443,6 +561,15 @@ namespace PMApplication
             RefreshUserPage(null, null);
         }
 
+        /// <summary>
+        /// Called through user page, refresh button.
+        /// Gets all sources for logged in user and displays them onto user page grid.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (refresh button).</param>
+        /// <param name="e">The event args passed to the event.</param>
+        /// <exception cref="PMClientException">
+        /// Thrown by password manager client on socket errors.
+        /// </exception>
         private async void RefreshUserPage(object sender, EventArgs e)
         {
             if(userPage == null)
@@ -498,6 +625,13 @@ namespace PMApplication
             }
         }
 
+        /// <summary>
+        /// Called through login page, create user button.
+        /// Requests server to create a new user with specified username.
+        /// Public and private key files are created for user.
+        /// </summary>
+        /// <param name="sender">The object which caused the event (create user button).</param>
+        /// <param name="e">The event args passed to the event (user event args).</param>
         private async void CreateUser(object sender, EventArgs e)
         {
             UserEventArgs ue = (UserEventArgs)e;
@@ -559,6 +693,12 @@ namespace PMApplication
             Login(sender, ue);
         }
 
+        /// <summary>
+        /// Async task to delete password from server for logged in user.
+        /// Runs pmClient request async with Task.Run.
+        /// </summary>
+        /// <param name="source">The source for the password to delete is tied to.</param>
+        /// <returns>Body success or error message as string.</returns>
         private async Task<string> DeletePassword(string source)
         {
             CommunicationProtocol answer = await Task.Run(() => pmClient.DeletePassword(source, session));
@@ -568,6 +708,13 @@ namespace PMApplication
             return answerStr;
         }
 
+        /// <summary>
+        /// Async task to get password with specified source from server (for logged in user).
+        /// Runs pmCLient request async with Task.Run.
+        /// Decrypts the password before returning it.
+        /// </summary>
+        /// <param name="source">The source for which the password to get is tied to.</param>
+        /// <returns>The decrypted password.</returns>
         private async Task<string> GetPassword(string source)
         {
             CommunicationProtocol answer = await Task.Run(() => pmClient.GetPassword(source, session));
@@ -578,6 +725,14 @@ namespace PMApplication
             return password;
         }
 
+        /// <summary>
+        /// Async task to set password with specified source and password in server (for logged in user).
+        /// Runs pmClient request async with Task.Run.
+        /// In pmClient, password is encrypted before it is uploaded to server.
+        /// </summary>
+        /// <param name="source">The source for the password</param>
+        /// <param name="password">The password itself.</param>
+        /// <returns>Body success or error message as string.</returns>
         private async Task<string> SetPassword(string source, string password)
         {
             CommunicationProtocol answer = await Task.Run(() => pmClient.SetPassword(source, password, session));
@@ -587,6 +742,12 @@ namespace PMApplication
             return answerStr;
         }
 
+        /// <summary>
+        /// Async task to login to user in server.
+        /// Runs login request, then login test.
+        /// pmCLient requests are called async using Task.Run.
+        /// </summary>
+        /// <returns>Success or error message string from login test or login request body.</returns>
         private async Task<string> LoginToUser()
         {
             CommunicationProtocol answer = await Task.Run(() => pmClient.LoginRequest(username));
@@ -603,6 +764,11 @@ namespace PMApplication
             return answerStr;
         }
 
+        /// <summary>
+        /// Async task to get all sources for logged in user from server.
+        /// pmClient requests are run async with Task.Run.
+        /// </summary>
+        /// <returns>List of sources from body or null if no body was returned.</returns>
         private async Task<List<string>> GetSources()
         {
             CommunicationProtocol answer = await Task.Run(() => pmClient.GetSources(session));
@@ -618,6 +784,11 @@ namespace PMApplication
             return sources;
         }
 
+        /// <summary>
+        /// Async task to delete user logged in user in server.
+        /// pmClient request is async using Task.Run.
+        /// </summary>
+        /// <returns>Success or error message string from body.</returns>
         private async Task<string> DeleteUser()
         {
             CommunicationProtocol answer = await Task.Run(() => pmClient.DeleteUser(session));
