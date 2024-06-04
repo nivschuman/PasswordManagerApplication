@@ -176,6 +176,9 @@ namespace PMApplication
         /// <exception cref="PMClientException">
         /// Thrown by password manager client on socket errors.
         /// </exception>
+        /// <exception cref="CryptographicException">
+        /// Thrown on failure to import RSA key files or decryption failure during login.
+        /// </exception>
         private async void Login(object sender, EventArgs e)
         {
             UserEventArgs ue = (UserEventArgs)e;
