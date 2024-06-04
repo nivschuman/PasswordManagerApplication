@@ -1,0 +1,35 @@
+2024-06-04 21:33:22.1638|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-06-04 21:33:32.8005|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-06-04 21:33:33.4763|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-06-04 21:33:33.7465|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-06-04 21:33:37.2356|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 21:33:37.2356|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-06-04 21:33:37.6678|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 21:33:37.6678|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-06-04 21:33:38.2138|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 21:33:38.2138|INFO|PMApplication.MainWindow.ShowPassword|Got password for "microsoft" from server
+2024-06-04 21:33:39.6948|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-06-04 21:34:18.6292|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-06-04 21:34:32.0959|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-06-04 21:34:32.4517|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-06-04 21:34:32.7749|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-06-04 21:34:33.9353|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 21:34:33.9389|INFO|PMApplication.MainWindow.ShowPassword|Got password for "microsoft" from server
+2024-06-04 21:34:34.5092|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 21:34:34.5092|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-06-04 21:34:35.4933|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 21:34:35.4933|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server
+2024-06-04 22:11:36.0913|INFO|PMApplication.MainWindow..ctor|Started main window with new login page
+2024-06-04 22:11:55.7246|INFO|PMApplication.MainWindow.Login|Entered login with username: "niv", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-06-04 22:12:03.4041|ERROR|PMApplication.MainWindow.Login|Connection to server refused: {"Type":"System.Net.Internals.SocketExceptionFactory+ExtendedSocketException", "Message":"No connection could be made because the target machine actively refused it. 127.0.0.1:8080", "SocketErrorCode":"ConnectionRefused", "ErrorCode":10061, "NativeErrorCode":10061, "TargetSite":"Void DoConnect(System.Net.EndPoint, System.Net.Internals.SocketAddress)", "StackTrace":"   at System.Net.Sockets.Socket.DoConnect(EndPoint endPointSnapshot, SocketAddress socketAddress)\r\n   at System.Net.Sockets.Socket.Connect(EndPoint remoteEP)\r\n   at PasswordManagerClientDLL.Client.SendAndReceiveSSL(String method, Byte[] body, String session, String contentType) in C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\Client.cs:line 282\r\n   at PasswordManagerClientDLL.Client.SendAndReceive(String method, Byte[] body, String session, String contentType) in C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\Client.cs:line 88\r\n   at PasswordManagerClientDLL.PasswordManagerClient.LoginRequest(String userName) in C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\PasswordManagerClient.cs:line 158", "Data":{}, "Source":"System.Net.Sockets", "HResult":-2147467259}
+2024-06-04 22:12:14.6961|INFO|PMApplication.MainWindow.Login|Entered login with username: "niv", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-06-04 22:12:19.0064|ERROR|PMApplication.MainWindow.Login|Decryption failed: {"Type":"Internal.Cryptography.CryptoThrowHelper+WindowsCryptographicException", "TargetSite":"Void DecryptKey(System.Security.Cryptography.SafeKeyHandle, Byte[], Int32, Boolean, Byte[] ByRef)", "StackTrace":"   at Internal.NativeCrypto.CapiHelper.DecryptKey(SafeKeyHandle safeKeyHandle, Byte[] encryptedData, Int32 encryptedDataLength, Boolean fOAEP, Byte[]& decryptedData)\r\n   at System.Security.Cryptography.RSACryptoServiceProvider.Decrypt(Byte[] rgb, Boolean fOAEP)\r\n   at PasswordManagerClientDLL.PasswordManagerClient.LoginTest(Byte[] encryptedNumber, String loginSession) in C:\\Users\\nivsc\\source\\repos\\PasswordManagerClientDLL\\PasswordManagerClient.cs:line 182\r\n   at PMApplication.MainWindow.LoginToUser() in C:\\Users\\nivsc\\source\\repos\\PMApplication\\MainWindow.xaml.cs:line 768\r\n   at PMApplication.MainWindow.Login(Object sender, EventArgs e) in C:\\Users\\nivsc\\source\\repos\\PMApplication\\MainWindow.xaml.cs:line 194", "Message":"The parameter is incorrect.", "Data":{}, "Source":"System.Security.Cryptography.Csp", "HResult":-2147024809}
+2024-06-04 22:12:22.4666|INFO|PMApplication.MainWindow.Login|Entered login with username: "alon", public key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPublicKey", private key: "C:\Users\nivsc\source\repos\PMApplication\bin\Debug\net5.0-windows\keys\alonPrivateKey"
+2024-06-04 22:12:22.5587|INFO|PMApplication.MainWindow.Login|Created and navigated to new user page for "alon"
+2024-06-04 22:12:22.7034|INFO|PMApplication.MainWindow.RefreshUserPage|Got sources for user "alon", displaying them
+2024-06-04 22:12:24.0494|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 22:12:24.0494|INFO|PMApplication.MainWindow.ShowPassword|Got password for "microsoft" from server
+2024-06-04 22:12:24.8427|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 22:12:24.8427|INFO|PMApplication.MainWindow.ShowPassword|Got password for "gmail" from server
+2024-06-04 22:12:27.2097|DEBUG|PMApplication.MainWindow.GetPassword|Got password, decrypting it
+2024-06-04 22:12:27.2097|INFO|PMApplication.MainWindow.ShowPassword|Got password for "Youtube" from server

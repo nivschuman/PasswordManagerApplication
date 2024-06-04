@@ -91,9 +91,16 @@ namespace PMApplication
         /// </summary>
         public MainWindow()
         {
+            //get data from config file
+            string configString = File.ReadAllText("config.json");
+            JsonDocument configData = JsonSerializer.Deserialize<JsonDocument>(configString);
+
             //server connection
-            serverIP = System.Net.IPAddress.Parse("127.0.0.1");
-            serverPort = 8080;
+            JsonElement serverIPProperty = configData.RootElement.GetProperty("serverIP");
+            serverIP = System.Net.IPAddress.Parse(serverIPProperty.GetString());
+
+            JsonElement serverPortProperty = configData.RootElement.GetProperty("serverPort");
+            serverPort = serverPortProperty.GetInt32();
 
             pmClient = new PasswordManagerClient(serverIP, serverPort);
 
