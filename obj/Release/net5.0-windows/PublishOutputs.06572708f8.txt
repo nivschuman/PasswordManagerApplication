@@ -1,0 +1,8 @@
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\PMApplication.exe
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\PMApplication.dll
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\PMApplication.deps.json
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\PMApplication.runtimeconfig.json
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\PMApplication.pdb
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\NLog.dll
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\PasswordManagerClientDLL.dll
+C:\Users\nivsc\source\repos\PMApplication\bin\Release\net5.0-windows\publish\PasswordManagerClientDLL.pdb

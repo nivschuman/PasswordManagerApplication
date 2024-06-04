@@ -185,7 +185,18 @@ namespace PMApplication
 
             logger.Info("Entered login with username: {username}, public key: {publicKey}, private key: {privateKey}", username, publicKeyFileName, privateKeyFileName);
 
-            pmClient.ImportRSAKeys(publicKeyFileName, privateKeyFileName);
+            try
+            {
+                pmClient.ImportRSAKeys(publicKeyFileName, privateKeyFileName);
+            }
+            catch(CryptographicException ce)
+            {
+                MessageBox.Show("Failed to import RSA keys, try using different key files");
+
+                logger.Error("Importing RSA keys failed: {@CryptographicException}", ce);
+
+                return;
+            }
 
             string answerStr = "";
 
