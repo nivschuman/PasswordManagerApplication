@@ -102,7 +102,10 @@ namespace PMApplication
             JsonElement serverPortProperty = configData.RootElement.GetProperty("serverPort");
             serverPort = serverPortProperty.GetInt32();
 
-            pmClient = new PasswordManagerClient(serverIP, serverPort);
+            JsonElement withSSLProperty = configData.RootElement.GetProperty("withSSL");
+            bool withSSL = withSSLProperty.GetBoolean();
+
+            pmClient = new PasswordManagerClient(serverIP, serverPort, withSSL);
 
             //initialize logger
             InitializeLog();
